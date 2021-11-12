@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(198, 198, 250);
+    font-family: "Poppins", sans-serif;
+    color: rebeccapurple;
+    text-shadow: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h1 {
+    margin: 10px;
+}
+
+a {
+    display: none;
+}
+
+/*********************************** content boxes ************************************************************/
+.box {
+    font: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.box:hover img {
+    opacity: 0.5;
+}
+
+.box:hover .btn {
+    font: inherit;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 0.01rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 10rem;
+    padding: 1rem;
+}
+
+.btn:hover {
+    background-color: rebeccapurple;
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+.box img {
+    border-radius: 10px;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+/*********************************** nav bar ************************************************************/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: rebeccapurple;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: indigo;
+}
+
+/*********************************** search widget ************************************************************/
+
+.text a {
+    display: flex;
+}
+
+.search {
+    position: relative;
+    float: right;
+    height: 50px;
+    margin-right: 50px;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+    float: right;
+}
+
+.butn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    float: inline-end;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+    margin-right: 50px;
+}
+
+.butn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 200px;
+}
+
+.search.active .butn {
+    transform: translateX(198px);
+}

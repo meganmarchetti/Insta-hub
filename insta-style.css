@@ -1,5 +1,4 @@
-/* CSS for home page */
-
+/* CSS for Insta Page */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
 * {
@@ -25,6 +24,60 @@ h1 {
 
 a {
     display: none;
+}
+
+/*********************************** content boxes ************************************************************/
+.box {
+    font: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.box:hover img {
+    opacity: 0.5;
+}
+
+.box:hover .btn {
+    font: inherit;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 0.01rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 10rem;
+    padding: 1rem;
+}
+
+.btn:hover {
+    background-color: rebeccapurple;
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+.box img {
+    border-radius: 10px;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
 }
 
 /*********************************** nav bar ************************************************************/
@@ -104,32 +157,4 @@ li a:hover {
 
 .search.active .butn {
     transform: translateX(198px);
-}
-
-/*********************************** home page content ************************************************************/
-
-.content {
-    font: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    transform: translateX(400%);
-    transition: transform 0.4s ease;
-}
-
-.content img {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
-}
-
-.content:nth-of-type(even) {
-    transform: translateX(-400%);
-}
-
-.content.show {
-    transform: translateX(0);
 }

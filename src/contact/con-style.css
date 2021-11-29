@@ -1,4 +1,4 @@
-/* CSS for home page */
+/* CSS for contact page */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
@@ -17,10 +17,11 @@ body {
     justify-content: center;
     overflow-x: hidden;
     margin: 0;
+    padding-bottom: 50px;
 }
 
 h1 {
-    margin: 10px;
+    margin-top: 75px;
 }
 
 a {
@@ -29,29 +30,49 @@ a {
 
 /*********************************** nav bar ************************************************************/
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow: hidden;
+.container {
+    margin: 0 auto;
+}
+
+.nav {
+    position: fixed;
     background-color: rebeccapurple;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
-li {
-    float: left;
+.nav .container {
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
 }
 
-li a {
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    padding-left: 5px;
+}
+
+.nav li:hover {
+    background-color: indigo;
+    font-weight: bold;
+}
+
+.nav li a {
     display: block;
     color: #fff;
     text-align: center;
-    padding: 14px 16px;
+    padding: 12px 18px;
     text-decoration: none;
-}
-
-li a:hover {
-    background-color: indigo;
 }
 
 /*********************************** search widget ************************************************************/
@@ -61,19 +82,18 @@ li a:hover {
 }
 
 .search {
-    position: relative;
     float: right;
-    height: 50px;
-    margin-right: 50px;
+    margin-right: 15px;
+    padding: 12px 18px;
 }
 
 .search .input {
     background-color: #fff;
     border: 0;
-    font-size: 18px;
-    padding: 15px;
-    height: 50px;
-    width: 50px;
+    font-size: 14px;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
     transition: width 0.3s ease;
     float: right;
 }
@@ -82,13 +102,13 @@ li a:hover {
     background-color: #fff;
     border: 0;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 14px;
     position: absolute;
     float: inline-end;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 50px;
+    /* top: 0;
+    left: 0; */
+    height: 25px;
+    width: 25px;
     transition: transform 0.3s ease;
     margin-right: 50px;
 }
@@ -99,37 +119,21 @@ li a:hover {
 }
 
 .search.active .input {
-    width: 200px;
+    width: 150px;
 }
 
 .search.active .butn {
-    transform: translateX(198px);
+    transform: translateX(148px);
 }
 
-/*********************************** home page content ************************************************************/
+/*********************************** contact page content ************************************************************/
 
-.content {
-    font: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    transform: translateX(400%);
-    transition: transform 0.4s ease;
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.content img {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
-}
-
-.content:nth-of-type(even) {
-    transform: translateX(-400%);
-}
-
-.content.show {
-    transform: translateX(0);
+::-webkit-scrollbar-thumb {
+    background: indigo;
+    border-radius: 12px;
+    height: 25px;
 }

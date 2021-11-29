@@ -1,0 +1,208 @@
+/* CSS for home page */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(198, 198, 250);
+    font-family: "Poppins", sans-serif;
+    color: rebeccapurple;
+    text-shadow: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+h1 {
+    margin-top: 75px;
+}
+
+a {
+    display: none;
+}
+
+/*********************************** nav bar ************************************************************/
+
+.container {
+    margin: 0 auto;
+}
+
+.nav {
+    position: fixed;
+    background-color: rebeccapurple;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    padding-left: 5px;
+}
+
+.nav li:hover {
+    background-color: indigo;
+    font-weight: bold;
+}
+
+.nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 12px 18px;
+    text-decoration: none;
+}
+
+/*********************************** search widget ************************************************************/
+
+.text a {
+    display: flex;
+}
+
+.search {
+    float: right;
+    margin-right: 15px;
+    padding: 12px 18px;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 14px;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+    transition: width 0.3s ease;
+    float: right;
+}
+
+.butn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    float: inline-end;
+    /* top: 0;
+    left: 0; */
+    height: 25px;
+    width: 25px;
+    transition: transform 0.3s ease;
+    margin-right: 50px;
+}
+
+.butn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 150px;
+}
+
+.search.active .butn {
+    transform: translateX(148px);
+}
+
+/*********************************** home page content ************************************************************/
+
+.content {
+    font: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.content img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.content.show {
+    transform: translateX(0);
+}
+
+/*********************************** home page content - counter ************************************************************/
+
+.counter {
+    font-size: 40px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.counter-container a {
+    font-size: 10px;
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 5px;
+    border: indigo solid 1px;
+    width: 150px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.counter-container:hover a {
+    background-color: indigo;
+    color: #fff;
+}
+
+i p {
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: indigo;
+    border-radius: 12px;
+    height: 25px;
+}

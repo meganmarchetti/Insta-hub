@@ -1,0 +1,149 @@
+<!-- HTML for spotify page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Hub</title>
+    <link rel="stylesheet" href="/src/spotify/spot-style.css">
+    <link rel="icon" href="/pics/icon.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <div class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="/src/home/index.html">Home</a></li>
+                <li><a href="/src/instagram/insta-index.html">Instagram</a></li>
+                <li><a href="/src/spotify/spot-index.html">Spotify</a></li>
+                <li><a href="/src/contact/con-index.html">Contact</a></li>
+                <li><div class="search">
+                    <input type="text" class="input" placeholder="Search...">
+                    <button class="butn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                </li>
+                
+            </ul>
+            <a class="npBox" href="#open-modal">
+                <p>Megan's Currently Playing:</p> 
+                <div id="trackArtwork"></div>
+                <div class="trackInfo">
+                    <p id="trackName"></p>
+                    <p id="artist"></p>
+                </div>
+                
+            </a>
+        </div>
+    </div>
+    
+    <div id="open-modal" class="modal-window">
+        <div class="modal-header">
+            <button type="button" onclick="location.href='#'">x</button>
+            <p>Megan's Currently Playing:</p> 
+        </div>
+        <div class="modal-content">
+            <div id="trackArtwork1"></div>
+            <div class="trackInfo">
+                <p id="trackName1"></p>
+                <p id="artist1"></p>
+                <p id="album"></p>
+                <p id="release"></p>
+                <div class="btns">
+                    <div id="pbtn"></div>
+                    <div id="tbtn"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h1>Spotify</h1>
+    <div class="pContainer">
+        <div id="propic"></div>
+        <div class="proinfo">
+            <p>Username: </p>
+            <div id="uname"></div>
+            <p>Followers: </p>
+            <div id="followers"></div>
+            <div id="plink"></div>
+        </div>
+    </div>
+    <h3>Top Artists</h3>
+    <div class="topContainer">
+        
+        <div class="art">
+            <div id="pic1"></div>
+                <div class="artinfo">
+                    <p>Artist: </p>
+                    <p id="name1"></p>
+                    <p>Genre: </p>
+                    <p id="genre1"></p>
+                
+            </div>
+            
+        </div>
+        <div class="art">
+            <div id="pic2"></div>  
+                <div class="artinfo">
+                    <p>Artist: </p>
+                    <p id="name2"></p>
+                    <p>Genre: </p>
+                    <p id="genre2"></p>
+                
+            </div>
+            
+        </div>
+        <div class="art">
+            <div id="pic3"></div>
+                <div class="artinfo">
+                    <p>Artist: </p>
+                    <p id="name3"></p>
+                    <p>Genre: </p>
+                    <p id="genre3"></p>
+                </div>
+            
+            
+        </div>
+    </div>
+    
+   
+
+    <h1>Browse Playlists</h1>
+
+    
+    
+    <div class="slider-container">
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/1r4EquZgqUajqh27rsySXl?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/5JIBQei8EgUpwWPo3QYnNy?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/791gIOhbkJySDASZn95qoD?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/2c0KH9y5K9E9AFObWsQjcb?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/4tY0R4fIAJhR9rkcU8cKSR?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/6W8TfIQS9BtpM2kAl86FpK?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://open.spotify.com/embed/playlist/5HvONx7BrnGvHSqDyIEcFD?utm_source=generator" width="300" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        
+        
+    </div>
+
+    <script src="/src/spotify/spot-script.js"></script>
+    
+</body>
+</html>

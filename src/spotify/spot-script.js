@@ -1,0 +1,154 @@
+// JS for spotify page
+const search = document.querySelector(".search");
+const butn = document.querySelector(".butn");
+const input = document.querySelector(".input");
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+butn.addEventListener("click", () => { //search button becomes active upon clicks
+    search.classList.toggle("active");
+    input.focus();
+})
+
+
+
+//currently listening to
+var atoken = "BQDJYqIT3l-6rx5MJ48sIYRYb40EOIJ3QGfEwpBF5pZfvd6kUlRxid2VSCEw7BSADEJ95qs3PnrTuoHSFYtZiSP6wB4bAEnaywqyf1FwYF8aB54G_vvbYthOpPHnsNlFbrJHKHWKDRV4Vhwen-g8fYhhF9kUK0hZL1zIBvVp2DHsPbG2O-xwxalwi2HFIeE4b1b0pUWhLM0YkIHUdXTOOBgM4zgxlFDnMmYrX8I";
+
+$.ajax({
+  type: "GET",
+  url: "https://api.spotify.com/v1/me/player/currently-playing?market=ES",
+  headers: {
+     'Authorization' : 'Bearer ' + atoken
+  },
+  success: function(data) {
+    console.log(data);
+    // console.log(data.item.name);
+    // console.log(data.item.artists[0].name);
+    // console.log(data.context.uri);
+
+    var artwork = data.item.album.images[1].url;
+    var trackName = data.item.name;
+    var artistName = data.item.artists[0].name;
+    var albumName = data.item.album.name;
+    var relDate = data.item.album.release_date;
+    var pb = data.context.external_urls.spotify;
+    var tb = data.item.external_urls.spotify;
+
+
+    var artworkID = document.getElementById('trackArtwork');
+    var track = document.getElementById('trackName');
+    var artist = document.getElementById('artist');
+    
+    
+    artworkID.innerHTML = '<img src=' + artwork + '>';
+    track.textContent = trackName;
+    artist.textContent = 'By ' + artistName;
+
+
+    var artworkID1 = document.getElementById('trackArtwork1');
+    var track1 = document.getElementById('trackName1');
+    var artist1 = document.getElementById('artist1');
+    var album = document.getElementById("album");
+    var release = document.getElementById("release");
+    var pbtn = document.getElementById("pbtn");
+    var tbtn = document.getElementById("tbtn");
+    
+    artworkID1.innerHTML = '<img src=' + artwork + '>';
+    track1.textContent = trackName;
+    artist1.textContent = artistName;
+    album.textContent = albumName;
+    release.textContent = relDate.substring(0, 4);
+    pbtn.innerHTML = '<a target=_blank href="' + pb + '">Listen to Playlist</a>';
+    tbtn.innerHTML = '<a target=_blank href="' + tb + '">Listen to Track</a>';
+
+  },
+  dataType: "json"
+});
+
+
+$.ajax({
+  type: "GET",
+  url: "https://api.spotify.com/v1/users/meegan98",
+  headers: {
+     'Authorization' : 'Bearer ' + atoken
+  },
+  success: function(data) {
+    // console.log(data);
+    // console.log(data.images[0].url);
+    console.log(data.external_urls.spotify);
+    
+
+    var ppic = data.images[0].url;
+    var fwers = data.followers.total;
+    var user = data.display_name;
+    var lnk = data.external_urls.spotify;
+
+    
+    var propic = document.getElementById("propic");
+    var followers = document.getElementById("followers");
+    var uname = document.getElementById("uname");
+    var plink = document.getElementById("plink");
+    
+    
+    propic.innerHTML = "<img src=" + ppic + ">";
+    followers.textContent = fwers;
+    uname.textContent = user;
+    plink.innerHTML = '<a href="' + lnk + '">Full Profile</a>';
+    
+    // console.log(plink.innerHTML);
+  
+  },
+  dataType: "json"
+});
+
+
+
+$.ajax({
+  type: "GET",
+  url: "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=3&offset=0",
+  headers: {
+     'Authorization' : 'Bearer ' + atoken
+  },
+  success: function(data) {
+    // console.log(data);
+    // console.log(data.items[0].name);
+    // console.log(data.items[1].name);
+    // console.log(data.items[2].name);
+    // console.log(data.external_urls.spotify);
+    var top1 = data.items[0].name;
+    var top2 = data.items[1].name;
+    var top3 = data.items[2].name;
+
+    var pic1 = data.items[0].images[0].url;
+    var pic2 = data.items[1].images[0].url;
+    var pic3 = data.items[2].images[0].url;
+
+    var genre1 = data.items[0].genres[0];
+    var genre2 = data.items[1].genres[0];
+    var genre3 = data.items[2].genres[3];
+
+    var pics1 = document.getElementById("pic1");
+    var pics2 = document.getElementById("pic2");
+    var pics3 = document.getElementById("pic3");
+
+    var names1 = document.getElementById("name1");
+    var names2 = document.getElementById("name2");
+    var names3 = document.getElementById("name3");
+
+    var genres1 = document.getElementById("genre1");
+    var genres2 = document.getElementById("genre2");
+    var genres3 = document.getElementById("genre3");
+
+    pics1.innerHTML = "<img src=" + pic1 + ">";
+    pics2.innerHTML = "<img src=" + pic2 + ">";
+    pics3.innerHTML = "<img src=" + pic3 + ">";
+    names1.textContent = top1;
+    names2.textContent = top2;
+    names3.textContent = top3;
+    genres1.textContent = genre1;
+    genres2.textContent = genre2;
+    genres3.textContent = genre3;
+  
+  },
+  dataType: "json"
+});

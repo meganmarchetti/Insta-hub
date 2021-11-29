@@ -1,0 +1,481 @@
+/* CSS for spotify page */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(198, 198, 250);
+    font-family: "Poppins", sans-serif;
+    color: rebeccapurple;
+    text-shadow: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 0;
+    transition: 0.4s;
+}
+
+h1 {
+    margin-top: 75px;
+}
+
+a {
+    display: none;
+}
+
+/*********************************** nav bar ************************************************************/
+
+.container {
+    margin: 0 auto;
+}
+
+.nav {
+    position: fixed;
+    background-color: rebeccapurple;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    /* padding: 2px 0; */
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    padding-left: 5px;
+}
+
+.nav li:hover {
+    background-color: indigo;
+    font-weight: bold;
+}
+
+.nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 12px 18px;
+    text-decoration: none;
+}
+
+/*********************************** search widget ************************************************************/
+
+.text a {
+    display: flex;
+}
+
+.search {
+    float: right;
+    margin-right: 15px;
+    padding: 12px 18px;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 14px;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+    transition: width 0.3s ease;
+    float: right;
+}
+
+.butn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    float: inline-end;
+    /* top: 0;
+    left: 0; */
+    height: 25px;
+    width: 25px;
+    transition: transform 0.3s ease;
+    margin-right: 50px;
+}
+
+.butn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 150px;
+}
+
+.search.active .butn {
+    transform: translateX(148px);
+}
+
+/*********************************** slider ************************************************************/
+
+.slider-container {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container iframe {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.slider-container iframe:hover {
+    transform: scale(1.05);
+    outline: 2px solid indigo;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: indigo;
+    border-radius: 12px;
+    height: 25px;
+}
+
+/*********************************** spotify currently playing ************************************************************/
+
+.npBox {
+    /* background: rgba(28, 0, 58, 0.363); */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    order: 2;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.npBox:hover {
+    background-color: indigo;
+}
+
+.npBox p {
+    color: #fff;
+    font-size: 10px;
+    padding-right: 5px;
+    padding-left: 2px;
+    margin: 0;
+}
+
+#trackArtwork {
+    width: 45px;
+    padding-top: 3px;
+}
+
+#trackArtwork img {
+    border-radius: 50%;
+    -webkit-animation: rotating 5s linear infinite;
+    -moz-animation: rotating 5s linear infinite;
+    -ms-animation: rotating 5s linear infinite;
+    -o-animation: rotating 5s linear infinite;
+    animation: rotating 5s linear infinite;
+    width: 40px;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#trackName,
+#artist {
+    color: #fff;
+    font-size: 8px;
+    margin: 0;
+}
+
+#trackName {
+    font-size: 12px;
+}
+
+/*********************************** spotify  ************************************************************/
+
+.pContainer {
+    background-color: indigo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin: 20px;
+}
+
+#propic img {
+    /* border: 2px solid indigo; */
+    border-radius: 50%;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    max-width: 200px;
+}
+
+#uname {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+#followers {
+    font-size: 20px;
+    color: #fff;
+}
+
+.pContainer p {
+    font-size: 15px;
+    color: rgb(198, 198, 250);
+    font-weight: bold;
+    margin: 0;
+}
+
+.proinfo {
+    margin-right: 50px;
+    margin-left: 20px;
+}
+
+/* top 3 artists */
+
+.topContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 0;
+}
+
+.topContainer p {
+    font-size: 15px;
+    color: indigo;
+    margin: 0;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#name1,
+#name2,
+#name3,
+#genre1,
+#genre2,
+#genre3 {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.topContainer img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
+#pic1:hover img,
+#pic2:hover img,
+#pic3:hover img {
+    transform: scale(1.05);
+    outline: 2px solid indigo;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.6;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.art {
+    display: flex;
+    margin: 20px;
+}
+
+.artinfo {
+    display: none;
+    color: indigo;
+}
+
+.art:hover .artinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: 0;
+    margin-left: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/*********************************** spotify current playing modal ************************************************************/
+
+#open-modal {
+    position: fixed;
+    visibility: hidden;
+    top: 49px;
+    right: 1px;
+    background-color: rebeccapurple;
+    color: #fff;
+    height: auto;
+    width: 300px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+    border: indigo solid 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+#open-modal:target {
+    visibility: visible;
+}
+
+.modal-window button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 4px;
+    border: none;
+    padding: 5px;
+}
+
+.modal-window button:hover {
+    color: indigo;
+    border: indigo solid 2px;
+    background-color: lavender;
+}
+
+#plink a {
+    display: flex;
+    color: rgb(198, 198, 250);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* modal current playing */
+
+.modal-window p {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#trackArtwork1 {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+#trackArtwork1 img {
+    /* border-radius: 50%; */
+    width: 150px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.modal-header {
+    display: flex;
+}
+
+.modal-header p {
+    margin-left: 10px;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.trackInfo #artist1,
+.trackInfo #album,
+.trackInfo #release {
+    font-size: 12px;
+    margin: 1px;
+    padding: 0;
+    text-align: center;
+}
+
+.trackInfo #trackName1 {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 0;
+    padding: none;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+#pbtn a,
+#tbtn a {
+    display: flex;
+    background-color: lavender;
+    color: indigo;
+    padding: 4px;
+    border: indigo solid 2px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+#pbtn:hover a,
+#tbtn:hover a {
+    background-color: indigo;
+    color: #fff;
+    border: #fff solid 2px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+}

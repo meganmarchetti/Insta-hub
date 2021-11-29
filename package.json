@@ -1,0 +1,28 @@
+{
+  "name": "insta-hub",
+  "version": "1.0.0",
+  "description": "Simple page design for showing images with scroll animation and navigation bar",
+  "main": "insta-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meganmarchetti/Insta-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meganmarchetti/Insta-hub/issues"
+  },
+  "homepage": "https://github.com/meganmarchetti/Insta-hub#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.15",
+    "request": "^2.88.2",
+    "serverless-http": "^2.7.0",
+    "spotifyCurrentlyPlaying.js": "^0.3.2"
+  }
+}

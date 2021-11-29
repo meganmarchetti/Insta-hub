@@ -169,6 +169,7 @@ a {
     order: 2;
     margin-left: auto;
     text-decoration: none;
+    padding-left: 10px;
 }
 
 .npBox:hover {
@@ -354,7 +355,7 @@ a {
 #open-modal {
     position: fixed;
     visibility: hidden;
-    top: 49px;
+    top: 50px;
     right: 1px;
     background-color: rebeccapurple;
     color: #fff;
@@ -389,6 +390,7 @@ a {
     color: indigo;
     border: indigo solid 2px;
     background-color: lavender;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 #plink a {

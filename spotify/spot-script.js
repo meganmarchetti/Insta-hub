@@ -12,7 +12,7 @@ butn.addEventListener("click", () => { //search button becomes active upon click
 
 
 //currently listening to
-var atoken = "BQDG2RHYqGcOpkkf8DbYtNt-pMwEF_lGs_PbcQhzDU19kfPlzii_I_nrgZS3x1ezjeuu6_RW6cVPZBY5z_yJo3Ek9UgCjphcPiuVp9WA3tsaz30eRE4SC2EZG-COG7DUjqSp88xDMSGI4WMnZK06M-sYlrYjv5O16h-eJL6GKxkSvJwKFSRiEpqZGHlptrgquVMdNZbqVrhAg7EgMBv7JddKkXCqxGiZ04bNTmM";
+var atoken = "BQCP3G18FXv1zckomVBWMU5hFu7YYDfNL6p64dS_mBY5GlPR1aQ3pIoHekr5MJRUCJSBx-jKnqwIx17K0k2PidVyg7LErPmmfRfLj2JsNAEER8cI2tAfKTSVA9XV-HFrV-oi5xVEYdhLFKMFv0f4i2EiK9F3twWmohekkKWsKdHg9IEBYUomRf4T18VUrbU3LhyuiaKBW4xaArr1C1AJH0gL-lRQ15itTjXm8hY";
 
 $.ajax({
   type: "GET",
@@ -22,9 +22,6 @@ $.ajax({
   },
   success: function(data) {
     console.log(data);
-    // console.log(data.item.name);
-    // console.log(data.item.artists[0].name);
-    // console.log(data.context.uri);
 
     var artwork = data.item.album.images[1].url;
     var trackName = data.item.name;
@@ -73,11 +70,8 @@ $.ajax({
      'Authorization' : 'Bearer ' + atoken
   },
   success: function(data) {
-    // console.log(data);
-    // console.log(data.images[0].url);
-    console.log(data.external_urls.spotify);
+    console.log(data);
     
-
     var ppic = data.images[0].url;
     var fwers = data.followers.total;
     var user = data.display_name;
@@ -93,9 +87,8 @@ $.ajax({
     propic.innerHTML = "<img src=" + ppic + ">";
     followers.textContent = fwers;
     uname.textContent = user;
-    plink.innerHTML = '<a href="' + lnk + '">Full Profile</a>';
+    plink.innerHTML = '<a target=_blank href="' + lnk + '">Full Profile</a>';
     
-    // console.log(plink.innerHTML);
   
   },
   dataType: "json"
@@ -110,11 +103,8 @@ $.ajax({
      'Authorization' : 'Bearer ' + atoken
   },
   success: function(data) {
-    // console.log(data);
-    // console.log(data.items[0].name);
-    // console.log(data.items[1].name);
-    // console.log(data.items[2].name);
-    // console.log(data.external_urls.spotify);
+    console.log(data);
+
     var top1 = data.items[0].name;
     var top2 = data.items[1].name;
     var top3 = data.items[2].name;
